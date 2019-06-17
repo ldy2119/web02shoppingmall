@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.hs.dgsw.board_back.Domain.AdvertisementMapper">
+
+    <select id="findAll" resultType="HashMap">
+        select id, imagePath, url
+        from advertise
+    </select>
+
+    <select id="findById" parameterType="Long" resultType="kr.hs.dgsw.web02shoppingmall.Domain.Advertisement">
+        select id, imagePath, url
+        from advertise
+        where id=#{id}
+    </select>
+
+    <insert id="add" parameterType="kr.hs.dgsw.web02shoppingmall.Domain.Advertisement">
+        insert into advertise(imagePath, url)
+        values (#{imagePath, #{url})
+        <selectKey keyProperty="id" resultType="Long">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+    
+    <update id="modify" parameterType="kr.hs.dgsw.web02shoppingmall.Domain.Advertisement">
+        update advertise set imagePath=#{imagePath}, url=#{url}
+        where id=#{id}
+    </update>
+    
+    <delete id="deleteById" parameterType="Long">
+        delete from advertise where id=#{id}
+    </delete>
+</mapper>

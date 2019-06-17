@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.hs.dgsw.board_back.Domain.CommentMapper">
+
+    <select id="findAll" resultType="HashMap">
+        select id, userId, commentContent, productId, created, updated
+        from comment
+    </select>
+
+    <select id="findById" parameterType="Long" resultType="kr.hs.dgsw.web02shoppingmall.Domain.Comment">
+        select id, userId, commentContent, productId, created, updated
+        from comment
+        where id=#{id}
+    </select>
+
+    <select id="findByProductId" resultType="HashMap">
+        select id, userId, commentContent, productId, created, updated
+        from comment
+        where productId=#{productId}
+    </select>
+
+    <insert id="add" parameterType="kr.hs.dgsw.web02shoppingmall.Domain.Comment">
+        insert into comment(userId, commentContent, productId)
+        values (userId=#{userId}, commentContent=#{commentContent}, productId=#{productId})
+        <selectKey keyProperty="id" resultType="Long">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+
+    <update id="modify" parameterType="kr.hs.dgsw.web02shoppingmall.Domain.Comment">
+        update comment set userId=#{userId}, commentContent=#{commentContent}, productId=#{productId}
+        where id=#{id}
+    </update>
+
+    <delete id="deleteById" parameterType="Long">
+        delete from comment where id=#{id}
+    </delete>
+</mapper>

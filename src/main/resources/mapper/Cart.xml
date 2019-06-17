@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.hs.dgsw.board_back.Domain.CartMapper">
+
+    <select id="findAll" resultType="HashMap">
+        select id, userId, productId, productCount
+        from cart
+    </select>
+
+    <select id="findById" parameterType="Long" resultType="kr.hs.dgsw.web02shoppingmall.Domain.Cart">
+        select id, userId, productId, productCount, created, updated
+        from cart
+        where id=#{id}
+    </select>
+
+    <select id="findByUserId" resultType="HashMap">
+        select id, userId, productId, productCount, created, updated
+        from cart
+        where userId=#{userId}
+    </select>
+
+    <insert id="add" parameterType="kr.hs.dgsw.web02shoppingmall.Domain.Cart">
+        insert into cart(userId, productId, productCount)
+        values (userId=#{userId}, productId=#{productId}, productCount=#{productCount})
+        <selectKey keyProperty="id" resultType="Long">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+
+    <update id="modify" parameterType="kr.hs.dgsw.web02shoppingmall.Domain.Cart">
+        update cart set userId=#{userId}, productId=#{productId}, productCount=#{productCount}
+        where id=#{id}
+    </update>
+
+    <delete id="deleteById" parameterType="Long">
+        delete from cart where id=#{id}
+    </delete>
+</mapper>
