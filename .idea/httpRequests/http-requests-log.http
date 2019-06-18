@@ -1,0 +1,361 @@
+GET http://localhost:8080/api/user/checkAccount/q
+Accept: application/json
+
+<> 2019-06-18T073618.200.json
+
+###
+
+GET http://localhost:8080/api/user/checkAccount/w
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "account" : "a",
+  "password" : "zxcv"
+}
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "account" : "q",
+  "password" : "q"
+}
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "account" : "asd",
+  "password" : "as"
+}
+
+###
+
+POST http://localhost:8080/api/user/add
+Content-Type: application/json
+
+{
+  "account" : "asd",
+  "password" : "as",
+  "userName" : "s",
+  "phoneNumber" : "s",
+  "telNumber" : "s",
+  "postNumber" : "s",
+  "address" : "f",
+  "detailAddress" : "f",
+  "email" : "v",
+  "mileage" : 0
+}
+
+<> 2019-06-18T042841.200.json
+
+###
+
+POST http://localhost:8080/api/user/add
+Content-Type: application/json
+
+{
+  "account" : "asd",
+  "password" : "as",
+  "userName" : "s",
+  "phoneNumber" : "s",
+  "telNumber" : "s",
+  "postNumber" : "s",
+  "address" : "f",
+  "detailAddress" : "f",
+  "email" : "v",
+  "mileage" : 0
+}
+
+<> 2019-06-18T042801.500.json
+
+###
+
+POST http://localhost:8080/api/user/add
+Content-Type: application/json
+
+{
+  "account" : "asd",
+  "password" : "as",
+  "userName" : "s",
+  "phoneNumber" : "s",
+  "telNumber" : "s",
+  "postNumber" : "s",
+  "address" : "f",
+  "detailAddress" : "f",
+  "email" : "v",
+  "mileage" : 0
+}
+
+<> 2019-06-18T042108.500.json
+
+###
+
+POST http://localhost:8080/api/user/add
+Content-Type: application/json
+
+{
+  "id" : null,
+  "account" : "asd",
+  "password" : "as",
+  "userName" : "s",
+  "phoneNumber" : "s",
+  "telNumber" : "s",
+  "postNumber" : "s",
+  "address" : "f",
+  "detailAddress" : "f",
+  "email" : "v",
+  "mileage" : 0
+}
+
+<> 2019-06-18T042014.500.json
+
+###
+
+POST http://localhost:8080/api/user/add
+Content-Type: application/json
+
+{
+
+  "account" : "asd",
+  "password" : "as",
+  "userName" : "s",
+  "phoneNumber" : "s",
+  "telNumber" : "s",
+  "postNumber" : "s",
+  "address" : "f",
+  "detailAddress" : "f",
+  "email" : "v",
+  "mileage" : 0
+}
+
+<> 2019-06-18T041933.500.json
+
+###
+
+POST http://localhost:8080/api/user/add
+Content-Type: application/json
+
+{
+
+  "account" : "asd",
+  "password" : "as",
+  "userName" : "s",
+  "phoneNumber" : "s",
+  "telNumber" : "s",
+  "postNumber" : "s",
+  "address" : "f",
+  "detailAddress" : "f",
+  "email" : "v",
+  "mileage" : 0
+}
+
+<> 2019-06-18T041550.500.json
+
+###
+
+POST http://localhost:8080/api/user/add
+Content-Type: application/json
+
+{
+
+  "account" : "asd",
+  "password" : "as",
+  "userName" : "s",
+  "phoneNumber" : "s",
+  "telNumber" : "s",
+  "postNumber" : "s",
+  "address" : "f",
+  "detailAddress" : "f",
+  "email" : "v",
+  "mileage" : 0
+}
+
+<> 2019-06-18T041441.500.json
+
+###
+
+GET http://localhost:8080/api/user/find/1
+Accept: application/json
+
+<> 2019-06-18T041438.200.json
+
+###
+
+POST http://localhost:8080/api/user/add
+Content-Type: application/json
+
+{
+
+  "account" : "asd",
+  "password" : "as",
+  "userName" : "s",
+  "phoneNumber" : "s",
+  "telNumber" : "s",
+  "postNumber" : "s",
+  "address" : "f",
+  "detailAddress" : "f",
+  "email" : "v",
+  "mileage" : 0
+}
+
+<> 2019-06-18T041356.500.json
+
+###
+
+POST http://localhost:8080/api/user/add
+Content-Type: application/json
+
+{
+
+  "account" : "asd",
+  "password" : "as",
+  "userName" : "s",
+  "phoneNumber" : "s",
+  "telNumber" : "s",
+  "postNumber" : "s",
+  "address" : "f",
+  "detailAddress" : "f",
+  "email" : "v",
+  "mileage" : 0
+}
+
+<> 2019-06-18T041318.500.json
+
+###
+
+GET http://localhost:8080/api/user/find/1
+Accept: application/json
+
+<> 2019-06-18T041315.200.json
+
+###
+
+GET http://localhost:8080/api/user/find/1
+Accept: application/json
+
+<> 2019-06-18T040555.500.json
+
+###
+
+GET http://localhost:8080/api/user/find/1
+Accept: application/json
+
+<> 2019-06-18T035957.500.json
+
+###
+
+GET http://localhost:8080/api/user/find/1
+Accept: application/json
+
+<> 2019-06-18T035850.500.json
+
+###
+
+POST http://localhost:8080/api/user/add
+Content-Type: application/json
+
+{
+
+  "account" : "asd",
+  "password" : "as",
+  "userName" : "s",
+  "phoneNumber" : "s",
+  "telNumber" : "s",
+  "postNumber" : "s",
+  "address" : "f",
+  "detailAddress" : "f",
+  "email" : "v",
+  "mileage" : 0
+}
+
+<> 2019-06-18T035818.500.json
+
+###
+
+GET http://localhost:8080/api/user/find/1
+Accept: application/json
+
+<> 2019-06-18T035706.500.json
+
+###
+
+POST http://localhost:8080/api/user/add
+Content-Type: application/json
+
+{
+
+  "account" : "asd",
+  "password" : "as",
+  "userName" : "s",
+  "phoneNumber" : "s",
+  "telNumber" : "s",
+  "postNumber" : "s",
+  "address" : "f",
+  "detailAddress" : "f",
+  "email" : "v",
+  "mileage" : 0
+}
+
+<> 2019-06-18T035507.404.json
+
+###
+
+GET http://localhost:8080/api/user/find/1
+Accept: application/json
+
+<> 2019-06-18T035453.404.json
+
+###
+
+GET http://localhost:8080/api/user/find/1
+Accept: application/json
+
+<> 2019-06-18T035418.404.json
+
+###
+
+GET http://localhost:8080/api/user/find/1
+Accept: application/json
+
+<> 2019-06-18T035303.404.json
+
+###
+
+GET http://localhost:8080/api/user/find/1
+Accept: application/json
+
+<> 2019-06-18T035242.404.json
+
+###
+
+GET http://localhost:8080/api/user/find/1
+Accept: application/json
+
+<> 2019-06-18T035151.404.json
+
+###
+
+GET http://localhost:8080/api/user/find/1
+Accept: application/json
+
+<> 2019-06-18T034516.404.json
+
+###
+
+GET http://localhost:8080/api/user/find/1
+Accept: application/json
+
+<> 2019-06-18T034207.404.json
+
+###
+

@@ -1,0 +1,15 @@
+{
+  "id": null,
+  "account": "q",
+  "password": null,
+  "userName": null,
+  "phoneNumber": null,
+  "telNumber": null,
+  "postNumber": null,
+  "address": null,
+  "detailAddress": null,
+  "email": null,
+  "mileage": 0,
+  "created": null,
+  "updated": null
+}
