@@ -2,6 +2,7 @@ package kr.hs.dgsw.web02shoppingmall.Service;
 
 import kr.hs.dgsw.web02shoppingmall.Domain.Product;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface ProductService {
@@ -10,5 +11,6 @@ public interface ProductService {
     Long add(Product product);
     int modify(Product product);
     Product findById(Long id);
-    Product findByCategoryId(Long categoryId);
+    List<Product> findByCategoryId(Long categoryId);
+    List<Product> findOrderByCurrentDate();
 }

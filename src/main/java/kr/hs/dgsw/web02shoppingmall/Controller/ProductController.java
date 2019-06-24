@@ -5,6 +5,7 @@ import kr.hs.dgsw.web02shoppingmall.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -38,8 +39,13 @@ public class ProductController {
         return productService.findById(id);
     }
 
-    @GetMapping(value = "/api/product/findByCategory/{id}")
-    public Product findByCategoryId(@PathVariable Long categoryId) {
+    @GetMapping(value = "/api/product/findByCategory/{categoryId}")
+    public List<Product> findByCategoryId(@PathVariable Long categoryId) {
         return productService.findByCategoryId(categoryId);
+    }
+
+    @GetMapping(value = "/api/product/findByCurrentDate")
+    public List<Product> findByCurrentDate() {
+        return productService.findOrderByCurrentDate();
     }
 }

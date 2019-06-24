@@ -5,6 +5,7 @@ import kr.hs.dgsw.web02shoppingmall.Domain.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -39,7 +40,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product findByCategoryId(Long categoryId) {
+    public  List<Product> findByCategoryId(Long categoryId) {
         return productMapper.findByCategoryId(categoryId);
+    }
+
+    @Override
+    public List<Product> findOrderByCurrentDate() {
+        return productMapper.findOrderByCurrentDate();
     }
 }

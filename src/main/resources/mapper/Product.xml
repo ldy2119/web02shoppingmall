@@ -4,18 +4,18 @@
 <mapper namespace="kr.hs.dgsw.web02shoppingmall.Domain.ProductMapper">
 
     <select id="findAll" resultType="HashMap">
-        select id, productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId
+        select id, productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId, created, updated
         from product
     </select>
 
     <select id="findById" parameterType="Long" resultType="kr.hs.dgsw.web02shoppingmall.Domain.Product">
-        select id, productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId
+        select id, productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId, created, updated
         from product
         where id=#{id}
     </select>
 
-    <select id="findByCategoryId" parameterType="Long" resultType="kr.hs.dgsw.web02shoppingmall.Domain.Product">
-        select id, productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId
+    <select id="findByCategoryId" parameterType="Long" resultType="HashMap">
+        select id, productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId, created, updated
         from product
         where categoryId = #{id}
     </select>
@@ -38,4 +38,10 @@
     <delete id="deleteById" parameterType="Long">
         delete from product where id=#{id}
     </delete>
+
+    <select id="findOrderByCurrentDate" resultType="HashMap">
+        select id, imagePath, productName, cost
+        from product
+        order by updated
+    </select>
 </mapper>

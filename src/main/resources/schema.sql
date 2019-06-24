@@ -33,6 +33,14 @@ create table category(
   categoryName varchar(30)
 ) engine=InnodB default charset=utf8mb4;
 
+create table subcategory(
+  id bigint primary key auto_increment,
+  categoryid varchar(255),
+  categoryname varchar(255),
+  foreign key (categoryname) references category(id)
+) engine=InnodB default charset=utf8mb4;
+
+
 create table product(
   id bigint primary key auto_increment,
   categoryId bigint,
@@ -46,8 +54,10 @@ create table product(
   sellingCount int,
   created datetime default current_timestamp,
   updated datetime default current_timestamp on update current_timestamp,
+  subcategoryid bigint,
 
-  foreign key (categoryId) references category(id)
+  foreign key (categoryId) references category(id),
+  foreign key (subcategoryid) references subcategory(id),
 ) engine=InnodB default charset=utf8mb4;
 
 create table cart(
