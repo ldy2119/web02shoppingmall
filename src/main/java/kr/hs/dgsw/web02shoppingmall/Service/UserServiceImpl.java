@@ -29,7 +29,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public User Login(User user)
     {
-        System.out.println(user);
         return userMapper.Login(user);
     }
 

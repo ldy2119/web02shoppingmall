@@ -1,3 +1,73 @@
+GET http://localhost:8080/api/cart
+Accept: application/json
+
+<> 2019-06-25T104536.200.json
+
+###
+
+GET http://localhost:8080/api/cart
+Accept: application/json
+
+<> 2019-06-25T104311.200.json
+
+###
+
+GET http://localhost:8080/api/cart
+Accept: application/json
+
+<> 2019-06-25T103346.200.json
+
+###
+
+GET http://localhost:8080/api/cart
+Accept: application/json
+
+<> 2019-06-25T103304.200.json
+
+###
+
+GET http://localhost:8080/api/cart
+Accept: application/json
+
+<> 2019-06-25T090223.200.json
+
+###
+
+GET http://localhost:8080/api/cart
+Accept: application/json
+
+<> 2019-06-25T085904.200.json
+
+###
+
+GET http://localhost:8080/api/cart
+Accept: application/json
+
+<> 2019-06-25T085227.200.json
+
+###
+
+GET http://localhost:8080/api/cart
+Accept: application/json
+
+<> 2019-06-25T085119.200.json
+
+###
+
+GET http://localhost:8080/api/cart
+Accept: application/json
+
+<> 2019-06-25T084929.500.json
+
+###
+
+GET http://localhost:8080/api/cart
+Accept: application/json
+
+<> 2019-06-25T084707.500.json
+
+###
+
 GET http://localhost:8080/api/user/checkAccount/q
 Accept: application/json
 

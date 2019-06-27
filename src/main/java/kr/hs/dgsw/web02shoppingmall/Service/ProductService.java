@@ -12,5 +12,5 @@ public interface ProductService {
     int modify(Product product);
     Product findById(Long id);
     List<Product> findByCategoryId(Long categoryId);
-    List<Product> findOrderByCurrentDate();
+    List<Product> findByCategoryIdOrderByCurrentDate(Long categoryId);
 }

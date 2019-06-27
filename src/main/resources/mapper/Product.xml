@@ -39,9 +39,10 @@
         delete from product where id=#{id}
     </delete>
 
-    <select id="findOrderByCurrentDate" resultType="HashMap">
+    <select id="findByCategoryIdOrderByCurrentDate" resultType="HashMap">
         select id, imagePath, productName, cost
         from product
+        where categoryId=#{categoryId}
         order by updated
     </select>
 </mapper>

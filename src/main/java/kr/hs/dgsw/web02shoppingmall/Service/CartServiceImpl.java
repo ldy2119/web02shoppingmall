@@ -25,11 +25,15 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public Long add(Cart cart) {
+        cart.setId(0L);
+        System.out.println(cart);
         return cartMapper.add(cart);
     }
 
     @Override
-    public int modify(Cart cart) {
+    public int modify(Cart cart)
+    {
+        System.out.println(cart);
         return cartMapper.modify(cart);
     }
 

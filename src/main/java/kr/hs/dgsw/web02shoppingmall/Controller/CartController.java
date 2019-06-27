@@ -38,7 +38,7 @@ public class CartController {
         return cartService.findById(id);
     }
 
-    @GetMapping(value = "/api/cart/findByUser/{id}")
+    @GetMapping(value = "/api/cart/findByUser/{userId}")
     public List<Cart> findByUserId(@PathVariable Long userId) {
         return cartService.findByUserId(userId);
     }

@@ -15,5 +15,5 @@ public interface ProductMapper {
     int modify(Product product);
     Product findById(@Param("id") Long id);
     List<Product> findByCategoryId(@Param("id") Long categoryId);
-    List<Product> findOrderByCurrentDate();
+    List<Product> findByCategoryIdOrderByCurrentDate(@Param("categoryId") Long categoryId);
 }

@@ -22,7 +22,7 @@
 
     <insert id="add" parameterType="kr.hs.dgsw.web02shoppingmall.Domain.Cart">
         insert into cart(userId, productId, productCount)
-        values (userId=#{userId}, productId=#{productId}, productCount=#{productCount})
+        values (#{userId}, #{productId}, #{productCount})
         <selectKey keyProperty="id" resultType="Long">
             select last_insert_id()
         </selectKey>
