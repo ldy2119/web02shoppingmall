@@ -45,4 +45,10 @@
         where categoryId=#{categoryId}
         order by updated
     </select>
+
+    <select id="findByContainName" parameterType="String" resultType="HashMap">
+        select id, imagePath, productName, cost
+        from product
+        where productName like "%#{search}%";
+    </select>
 </mapper>

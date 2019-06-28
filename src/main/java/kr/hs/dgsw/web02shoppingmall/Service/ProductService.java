@@ -13,4 +13,5 @@ public interface ProductService {
     Product findById(Long id);
     List<Product> findByCategoryId(Long categoryId);
     List<Product> findByCategoryIdOrderByCurrentDate(Long categoryId);
+    List<Product> findByContainName(String searchName);
 }
