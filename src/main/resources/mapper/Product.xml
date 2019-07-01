@@ -4,26 +4,25 @@
 <mapper namespace="kr.hs.dgsw.web02shoppingmall.Domain.ProductMapper">
 
     <select id="findAll" resultType="HashMap">
-        select id, productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId, created, updated
+        select id, productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId, subCategoryId, created, updated
         from product
     </select>
 
     <select id="findById" parameterType="Long" resultType="kr.hs.dgsw.web02shoppingmall.Domain.Product">
-        select id, productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId, created, updated
+        select id, productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId, subCategoryId, created, updated
         from product
         where id=#{id}
     </select>
 
     <select id="findByCategoryId" parameterType="Long" resultType="HashMap">
-        select id, productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId, created, updated
+        select id, productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId, subCategoryId, created, updated
         from product
         where categoryId = #{id}
     </select>
 
     <insert id="add" parameterType="kr.hs.dgsw.web02shoppingmall.Domain.Product">
-        insert into product(productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId)
-        values (productName=#{productName}, imagePath=#{imagePath}, cost=#{cost}, companyName=#{companyName},
-        detailDescription=#{detailDescription}, eventName=#{eventName}, mileage=#{mileage}, categoryId=#{categoryId})
+        insert into product(productName, imagePath, cost, companyName, detailDescription, eventName, mileage, categoryId, subCategoryId)
+        values (#{productName}, #{imagePath}, #{cost}, #{companyName}, #{detailDescription}, #{eventName}, #{mileage}, #{categoryId}, #{subCategoryId})
         <selectKey keyProperty="id" resultType="Long">
             select last_insert_id()
         </selectKey>
@@ -31,7 +30,7 @@
 
     <update id="modify" parameterType="kr.hs.dgsw.web02shoppingmall.Domain.Product">
         update product set productName=#{productName}, imagePath=#{imagePath}, cost=#{cost}, companyName=#{companyName},
-        detailDescription=#{detailDescription}, eventName=#{eventName}, mileage=#{mileage}, categoryId=#{categoryId}
+        detailDescription=#{detailDescription}, eventName=#{eventName}, mileage=#{mileage}, categoryId=#{categoryId}, subCategoryId=#{subCategoryId}
         where id=#{id}
     </update>
 
@@ -42,13 +41,13 @@
     <select id="findByCategoryIdOrderByCurrentDate" resultType="HashMap">
         select id, imagePath, productName, cost
         from product
-        where categoryId=#{categoryId}
-        order by updated
+        where subcategoryId=#{subcategoryId}
+        order by updated desc
     </select>
 
-    <select id="findByContainName" parameterType="String" resultType="HashMap">
+    <select id="findByContainName" resultType="HashMap">
         select id, imagePath, productName, cost
         from product
-        where productName like "%#{search}%";
+        where productName like CONCAT('%', #{search}, '%')
     </select>
 </mapper>

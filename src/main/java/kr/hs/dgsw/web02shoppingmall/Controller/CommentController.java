@@ -18,7 +18,7 @@ public class CommentController {
         return commentService.findAll();
     }
 
-    @GetMapping(value = "/api/comment/findByProduct/{id}")
+    @GetMapping(value = "/api/comment/findByProduct/{productId}")
     public List<Comment> findByProductId(@PathVariable Long productId) {
         return commentService.findByProductId(productId);
     }

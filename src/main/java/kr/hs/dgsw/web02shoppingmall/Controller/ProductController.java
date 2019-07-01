@@ -44,9 +44,9 @@ public class ProductController {
         return productService.findByCategoryId(categoryId);
     }
 
-    @GetMapping(value = "/api/product/findByCurrentDate/{categoryId}")
-    public List<Product> findByCurrentDate(@PathVariable Long categoryId) {
-        return productService.findByCategoryIdOrderByCurrentDate(categoryId);
+    @GetMapping(value = "/api/product/findByCurrentDate/{subcategoryId}")
+    public List<Product> findByCurrentDate(@PathVariable Long subcategoryId) {
+        return productService.findByCategoryIdOrderByCurrentDate(subcategoryId);
     }
 
     @GetMapping(value = "/api/product/findByContainName/{searchName}")

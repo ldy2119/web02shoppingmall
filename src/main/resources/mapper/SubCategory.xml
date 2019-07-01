@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.hs.dgsw.web02shoppingmall.Domain.SubCategoryMapper">
+
+    <select id="findAll" resultType="HashMap">
+        select id, categoryId, categoryName
+        from subcategory
+    </select>
+
+    <select id="findById" parameterType="Long" resultType="kr.hs.dgsw.web02shoppingmall.Domain.SubCategory">
+        select id, categoryId, categoryName
+        from subcategory
+        where id=#{id}
+    </select>
+
+    <insert id="add" parameterType="kr.hs.dgsw.web02shoppingmall.Domain.SubCategory">
+        insert into subcategory(categoryId, categoryName)
+        values (#{categoryId}, #{categoryName})
+        <selectKey keyProperty="id" resultType="Long">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+
+    <update id="modify" parameterType="kr.hs.dgsw.web02shoppingmall.Domain.SubCategory">
+        update subcategory set categoryId=#{categoryId} categoryName=#{categoryName}
+        where id=#{id}
+    </update>
+
+    <delete id="deleteById" parameterType="Long">
+        delete from subcategory where id=#{id}
+    </delete>
+
+    <select id="findByCategoryId" parameterType="Long" resultType="HashMap">
+        select id, categoryId, categoryName
+        from subcategory
+        where categoryId = #{categoryId}
+    </select>
+</mapper>

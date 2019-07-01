@@ -5,6 +5,7 @@ import kr.hs.dgsw.web02shoppingmall.Domain.CartMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -25,8 +26,7 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public Long add(Cart cart) {
-        cart.setId(0L);
-        System.out.println(cart);
+        List<Cart> list = cartMapper.findByUserId(cart.getUserId());
         return cartMapper.add(cart);
     }
 

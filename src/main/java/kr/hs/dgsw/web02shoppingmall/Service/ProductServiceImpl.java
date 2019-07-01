@@ -45,8 +45,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> findByCategoryIdOrderByCurrentDate(Long categoryId) {
-        return productMapper.findByCategoryIdOrderByCurrentDate(categoryId);
+    public List<Product> findByCategoryIdOrderByCurrentDate(Long subcategoryId) {
+        return productMapper.findByCategoryIdOrderByCurrentDate(subcategoryId);
     }
 
     @Override

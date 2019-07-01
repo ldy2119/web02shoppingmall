@@ -9,7 +9,7 @@ import java.util.List;
 public interface CommentMapper {
 
     List<Comment> findAll();
-    List<Comment> findByProductId(@Param("id") Long productId);
+    List<Comment> findByProductId(@Param("productId") Long productId);
     int deleteById(@Param("id") Long id);
     Long add(Comment comment);
     int modify(Comment comment);

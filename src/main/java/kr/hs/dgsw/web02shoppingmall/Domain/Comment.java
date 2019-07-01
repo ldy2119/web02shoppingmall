@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @Data
 public class Comment {
     private Long id;
-    private Long userId;
+    private String filteredUserName;
     private String commentContent;
     private Long productId;
 

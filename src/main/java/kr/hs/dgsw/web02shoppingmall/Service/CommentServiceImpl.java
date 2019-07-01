@@ -30,6 +30,9 @@ public class CommentServiceImpl implements CommentService{
 
     @Override
     public Long add(Comment comment) {
+        String filteredName = comment.getFilteredUserName();
+        filteredName = filteredName.substring(0, 1) + new String(new char[filteredName.length() -1]).replace("\0", "*");
+        comment.setFilteredUserName(filteredName);
         return commentMapper.add(comment);
     }
 

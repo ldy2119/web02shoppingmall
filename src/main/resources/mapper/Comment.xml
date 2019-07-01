@@ -4,32 +4,32 @@
 <mapper namespace="kr.hs.dgsw.web02shoppingmall.Domain.CommentMapper">
 
     <select id="findAll" resultType="HashMap">
-        select id, userId, commentContent, productId, created, updated
+        select id, filteredUserName, commentContent, productId, created, updated
         from comment
     </select>
 
     <select id="findById" parameterType="Long" resultType="kr.hs.dgsw.web02shoppingmall.Domain.Comment">
-        select id, userId, commentContent, productId, created, updated
+        select id, filteredUserName, commentContent, productId, created, updated
         from comment
         where id=#{id}
     </select>
 
-    <select id="findByProductId" resultType="HashMap">
-        select id, userId, commentContent, productId, created, updated
+    <select id="findByProductId" parameterType="Long" resultType="HashMap">
+        select id, filteredUserName, commentContent, productId, created, updated
         from comment
         where productId=#{productId}
     </select>
 
     <insert id="add" parameterType="kr.hs.dgsw.web02shoppingmall.Domain.Comment">
-        insert into comment(userId, commentContent, productId)
-        values (userId=#{userId}, commentContent=#{commentContent}, productId=#{productId})
+        insert into comment(filteredUserName, commentContent, productId)
+        values (#{filteredUserName}, #{commentContent}, #{productId})
         <selectKey keyProperty="id" resultType="Long">
             select last_insert_id()
         </selectKey>
     </insert>
 
     <update id="modify" parameterType="kr.hs.dgsw.web02shoppingmall.Domain.Comment">
-        update comment set userId=#{userId}, commentContent=#{commentContent}, productId=#{productId}
+        update comment set userId=#{filteredUserName}, commentContent=#{commentContent}, productId=#{productId}
         where id=#{id}
     </update>
 
